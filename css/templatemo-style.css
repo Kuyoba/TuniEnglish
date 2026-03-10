@@ -175,8 +175,10 @@ a:focus {
   background-image: url(../img/Networking.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  height: 80vh; /* slightly smaller than full viewport */
+  /* ensure top of image is visible on narrow viewports */
+  background-position: center top;
+  /* use full viewport height to avoid black gaps on mobile browsers */
+  height: 100vh;
   min-height: 300px;
   position: relative;
   overflow: hidden;
@@ -208,25 +210,25 @@ a:focus {
 
 @media (min-height: 830px) {
   #hero {
-    background-position: center -210px;
+    background-position: center top;
   }
 }
 
 @media (min-height: 680px) and (max-height: 829px) {
   #hero {
-    background-position: center -300px;
+    background-position: center top;
   }
 }
 
 @media (min-height: 500px) and (max-height: 679px) {
   #hero {
-    background-position: center -400px;
+    background-position: center top;
   }
 }
 
 @media (max-height: 499px) {
   #hero {
-    background-position: center -450px;
+    background-position: center top;
   }
 }
 

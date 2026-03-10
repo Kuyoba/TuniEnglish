@@ -2,20 +2,10 @@
 
 // parallax helper functions
 function getOffSet(){
-  var _offset = 450;
-  var windowHeight = window.innerHeight;
-
-  if(windowHeight > 500) {
-    _offset = 400;
-  } 
-  if(windowHeight > 680) {
-    _offset = 300
-  }
-  if(windowHeight > 830) {
-    _offset = 210;
-  }
-
-  return _offset;
+  // offsets previously used to adjust start position for various viewport
+  // heights were causing the background to stay put until a certain scroll
+  // amount. removing the offset yields a continuous, gradual motion.
+  return 0;
 }
 
 function setParallaxPosition($doc, multiplier, $object){
