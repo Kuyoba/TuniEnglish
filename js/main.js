@@ -147,3 +147,11 @@ $(function(){
     });
   });
 });
+function resetForm() {
+  var form = document.getElementById('clubForm');
+  form.reset();
+  form.querySelectorAll('input, select, textarea').forEach(function(el) {
+    el.classList.remove('valid', 'invalid', 'missing');
+  });
+}
+  
