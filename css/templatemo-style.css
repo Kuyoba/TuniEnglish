@@ -1,0 +1,536 @@
+/*
+
+The Town
+
+https://templatemo.com/tm-525-the-town
+
+*/
+
+html {
+  font-size: 18px;
+}
+
+body {
+  /* warmer off-white text */
+  color: #5b5b5b;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ensure all text inherits shadow */
+a {
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+/* warm up pure whites used as backgrounds */
+.bg-white,
+.navbar-scroll, .tm-navbar.scroll {
+  background-color: #f9f4f0 !important;
+}
+
+
+.btn {
+  padding: 8px 32px;
+}
+
+.btn:hover {
+  background-color: #ced4da;
+}
+
+.tm-section-pad-top {
+  padding-top: 135px;
+}
+
+.tm-text-primary {
+  color: #3496d8;
+}
+
+.tm-font-big {
+  font-size: 1.25rem;
+}
+
+.tm-btn-primary {
+  color: white;
+  background-color: #3496d8;
+  padding: 14px 35px;
+  border-radius: 30px;
+}
+
+.tm-btn-primary:hover,
+.tm-btn-primary:focus {
+  color: white;
+  background-color: #73c1f6;
+}
+
+/* Navbar */
+
+/* ensure inner container doesn't constrain full-width layout */
+.tm-navbar .container {
+  max-width: 100%;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tm-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.tm-navbar.hide {
+  transform: translateY(-100%);
+}
+
+.tm-navbar.scroll {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  border-bottom: none;
+}
+
+.navbar-brand {
+  /* logo will replace text; color/font settings retained for fallback */
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* constrain the logo image so header doesn't grow too tall */
+.navbar-brand .navbar-logo {
+  /* increased slightly for readability */
+  max-height: 70px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* adjust mobile proportionally */
+@media (max-width: 480px) {
+  .navbar-brand .navbar-logo {
+      max-height: 60px;
+  }
+}
+
+.navbar-brand:hover,
+.tm-navbar.scroll .navbar-brand:hover {
+  color: #3496d8;
+}
+
+.tm-navbar.scroll .navbar-brand {
+  color: #8f8f8f;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.tm-nav-link {
+  color: white;
+}
+
+.tm-navbar.scroll .tm-nav-link {
+  color: #8f8f8f;
+}
+
+.tm-navbar.scroll .tm-nav-link:hover,
+.tm-navbar.scroll .tm-nav-link.current,
+.tm-nav-link:hover {
+  color: #3496d8;
+}
+
+.navbar-toggler {
+  border: 1px solid white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-toggler-icon {
+  color: white;
+  padding-top: 6px;
+}
+
+.tm-navbar.scroll .navbar-toggler {
+  border: 1px solid #8f8f8f;
+}
+
+.tm-navbar.scroll .navbar-toggler-icon {
+  color: #8f8f8f;
+}
+
+/* Hero */
+
+#hero {
+  /* path adjusted so CSS file (Template/css) points to Template/img/Networking.jpg */
+  background-image: url(../img/Networking.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 80vh; /* slightly smaller than full viewport */
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+/* ensure hero text sits above overlay */
+#hero .tm-hero-text-container,
+#hero .tm-next {
+  position: relative;
+  z-index: 2;
+}
+
+#hero .tm-hero-title,
+#hero .tm-hero-subtitle {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+@media (min-height: 830px) {
+  #hero {
+    background-position: center -210px;
+  }
+}
+
+@media (min-height: 680px) and (max-height: 829px) {
+  #hero {
+    background-position: center -300px;
+  }
+}
+
+@media (min-height: 500px) and (max-height: 679px) {
+  #hero {
+    background-position: center -400px;
+  }
+}
+
+@media (max-height: 499px) {
+  #hero {
+    background-position: center -450px;
+  }
+}
+
+.tm-hero-text-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.tm-hero-text-container-inner {
+  margin-top: -90px;
+}
+
+.tm-hero-title {
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 2px #333;
+}
+
+.tm-intro-next {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+}
+
+@media (max-height: 480px) {
+  .tm-hero-text-container-inner {
+    margin-top: -40px;
+  }
+
+  .tm-intro-next {
+    bottom: 20px;
+  }
+}
+
+.tm-down-arrow-link {
+  display: block;
+  margin-top: 18%;
+}
+
+.tm-down-arrow {
+  color: #c57e7d;
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  padding: 10px 22px 8px;
+  transition: all 0.3s ease;
+}
+
+.tm-down-arrow:hover,
+.tm-down-arrow:focus {
+  color: white;
+  background: #3496d8;
+}
+
+/* Introduction */
+
+.tm-section-title {
+  font-size: 2.6rem;
+  font-weight: normal;
+}
+
+.tm-intro-text {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.tm-icon {
+  display: block;
+  margin-bottom: 55px;
+  color: #3496d8;
+}
+
+/* Work */
+
+.tm-work-description {
+  max-width: 650px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+
+/* Contact */
+
+#contact {
+  color: white;
+  background-image: url(../img/Contact.jpg);
+  background-position: center 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+  position: relative;
+  padding-bottom: 30px;
+  padding-top: 120px;
+}
+
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* ensure contact text sits above overlay */
+#contact .tm-container-contact,
+#contact .tm-footer {
+  position: relative;
+  z-index: 2;
+}
+
+.tm-underline {
+  border-top: 2px solid white;
+  height: 8px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.tm-underline-inner {
+  width: 25%;
+  height: 8px;
+  background: white;
+  position: relative;
+  z-index: 3;
+}
+
+.tm-contact-item {
+  margin-bottom: 75px;
+  position: relative;
+  z-index: 2;
+}
+
+.tm-contact-item-link {
+  display: flex;
+  align-items: center;
+}
+
+.tm-contact-item-link i,
+.tm-contact-item-link span {
+  color: white;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.tm-contact-item-link:hover i,
+.tm-contact-item-link:hover span {
+  color: #3496d8;
+}
+
+
+.tm-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  padding: 0 5px;
+  font-size: 0.75rem;
+  z-index: 2;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.tm-footer-link {
+  color: white;
+}
+
+.tm-footer-link:hover,
+.tm-footer-link:focus {
+  color: #3496d8;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.9;
+}
+
+/* Registration modal styling (light theme) */
+.modal-content {
+  background-color: #fafafa;
+  color: #333;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.modal-header, .modal-footer {
+  border-color: #dee2e6;
+}
+
+.modal .form-control {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.modal .form-control::placeholder {
+  color: #888;
+}
+
+.modal .btn-primary {
+  background-color: #3496d8;
+  border-color: #3496d8;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.modal .btn-primary:hover {
+  background-color: #287bb5;
+  border-color: #287bb5;
+}
+
+.modal .close {
+  color: #333;
+  opacity: 1;
+}
+
+.modal .close:hover {
+  color: #000;
+}
+
+/* add some spacing between fieldsets */
+.modal fieldset {
+  margin-bottom: 1.5rem;
+}
+
+.modal legend {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #3496d8;
+}
+
+/* validation feedback */
+.form-control.valid, .form-control.is-valid {
+  border-color: #28a745 !important;
+}
+.form-control.invalid, .form-control.is-invalid {
+  border-color: #dc3545 !important;
+}
+.form-control.missing {
+  border-color: #ffc107 !important;
+}
+
+@media (min-width: 768px) {
+  .tm-intro-text-container {
+    padding-left: 65px;
+  }
+
+  .navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1275px;
+  }
+
+
+  .tm-container-contact {
+    max-width: 1063px;
+  }
+}
+
+@media (max-width: 991px) {
+  .tm-intro-text-container {
+    padding-left: 15px;
+    padding-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tm-intro-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .navbar-nav {
+    max-width: 200px;
+    text-align: right;
+  }
+
+  .navbar-collapse {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 3px;
+  }
+
+  .navbar-collapse .nav-link {
+    color: #8f8f8f;
+  }
+}
+
+
+@media (max-width: 420px) {
+}
