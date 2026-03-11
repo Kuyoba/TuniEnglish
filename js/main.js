@@ -41,15 +41,16 @@ var background_image_parallax_2 = function($object, multiplier){
 };
 
 $(function(){
-  // Hero Section - Background Parallax
-  if (window.innerWidth > 767) {
-    background_image_parallax($(".tm-parallax"), 0.40, false);
-    background_image_parallax_2($("#contact"), 0.80);
-  }   
-  
-  // Handle window resize
+  // Hero & Contact Section - Background Parallax
+  // Always initialize parallax, including on phones.
+  background_image_parallax($(".tm-parallax"), 0.40, false);
+  background_image_parallax_2($("#contact"), 0.80);
+
+  // Handle window resize: refresh hero parallax and contact parallax if needed
   window.addEventListener('resize', function(){
     background_image_parallax($(".tm-parallax"), 0.30, true);
+    // also recalc contact position in case layout changes
+    background_image_parallax_2($("#contact"), 0.80);
   }, true);
 
   // Detect window scroll and update navbar

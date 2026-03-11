@@ -556,8 +556,8 @@ p {
   /* mobile tweaks for contact section */
   #contact {
     min-height: 100vh;
-    height: auto;
-    background-position: center top;
+    height: 100vh; /* keep full viewport height for consistent parallax and full-screen appearance */
+    background-position: center center;
   }
   #contact .tm-container-contact {
     padding: 50px 10px 20px;
@@ -579,20 +579,4 @@ p {
   }
 }
 
-@media (max-width: 420px) {
-  /* small phones: disable parallax and center backgrounds to avoid cropping issues */
-  #hero,
-  #contact {
-    background-attachment: scroll !important;
-    background-position: center center !important;
-  }
-}
-
-/* also apply for slightly larger mobiles */
-@media (max-width: 767px) {
-  #hero,
-  #contact {
-    background-attachment: scroll !important;
-    background-position: center center !important;
-  }
-}
+/* mobile overrides kept minimal so parallax works on phones */
