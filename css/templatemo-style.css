@@ -1,24 +1,15 @@
-/*
-
-The Town
-
-https://templatemo.com/tm-525-the-town
-
-*/
 
 html {
   font-size: 18px;
 }
 
 body {
-  /* warmer off-white text */
   color: #5b5b5b;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
-/* ensure all text inherits shadow */
 a {
   transition: all 0.3s ease;
 }
@@ -29,7 +20,6 @@ a:focus {
   outline: none;
 }
 
-/* warm up pure whites used as backgrounds */
 .bg-white,
 .navbar-scroll, .tm-navbar.scroll {
   background-color: #f9f4f0 !important;
@@ -71,7 +61,6 @@ a:focus {
 
 /* Navbar */
 
-/* ensure inner container doesn't constrain full-width layout */
 .tm-navbar .container {
   max-width: 100%;
   width: 100%;
@@ -100,15 +89,11 @@ a:focus {
 }
 
 .navbar-brand {
-  /* logo will replace text; color/font settings retained for fallback */
   color: white;
   font-size: 1.4rem;
   font-weight: bold;
 }
-
-/* constrain the logo image so header doesn't grow too tall */
 .navbar-brand .navbar-logo {
-  /* increased slightly for readability */
   max-height: 70px;
   width: auto;
   display: inline-block;
@@ -171,13 +156,10 @@ a:focus {
 /* Hero */
 
 #hero {
-  /* path adjusted so CSS file (Template/css) points to Template/img/Networking.jpg */
   background-image: url(../img/Networking.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  /* ensure top of image is visible on narrow viewports */
   background-position: center top;
-  /* use full viewport height to avoid black gaps on mobile browsers */
   height: 100vh;
   min-height: 300px;
   position: relative;
@@ -196,7 +178,6 @@ a:focus {
   z-index: 1;
 }
 
-/* ensure hero text sits above overlay */
 #hero .tm-hero-text-container,
 #hero .tm-next {
   position: relative;
@@ -339,7 +320,6 @@ a:focus {
   z-index: 1;
 }
 
-/* ensure contact text sits above overlay */
 #contact .tm-container-contact,
 #contact .tm-footer {
   position: relative;
@@ -411,7 +391,7 @@ p {
   line-height: 1.9;
 }
 
-/* Registration modal styling (light theme) */
+/* Registration */
 .modal-content {
   background-color: #fafafa;
   color: #333;
@@ -454,7 +434,6 @@ p {
   color: #000;
 }
 
-/* add some spacing between fieldsets */
 .modal fieldset {
   margin-bottom: 1.5rem;
 }
@@ -532,7 +511,6 @@ p {
     color: #8f8f8f;
   }
 }
-
 
 @media (max-width: 420px) {
 }

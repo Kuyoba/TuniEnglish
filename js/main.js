@@ -1,10 +1,5 @@
-// custom site behaviors for TuniEnglish Club
 
-// parallax helper functions
 function getOffSet(){
-  // offsets previously used to adjust start position for various viewport
-  // heights were causing the background to stay put until a certain scroll
-  // amount. removing the offset yields a continuous, gradual motion.
   return 0;
 }
 
@@ -68,7 +63,7 @@ $(function(){
       $('.tm-navbar').removeClass("hide");
     }
     
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
   
   // Close mobile menu after click 
@@ -76,8 +71,6 @@ $(function(){
     $('.navbar-collapse').removeClass('show'); 
   })
 
-  // Add smooth scrolling to all links
-  // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
   $("a").on('click', function(event) {
     if (this.hash !== "") {
       event.preventDefault();
@@ -88,7 +81,7 @@ $(function(){
       }, 400, function(){
         window.location.hash = hash;
       });
-    } // End if
+    }
   });
 
 
