@@ -78,7 +78,7 @@ a:focus {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(165, 165, 165, 0.3);
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
   transform: translateY(0);
@@ -89,13 +89,13 @@ a:focus {
 }
 
 .tm-navbar.scroll {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(165, 165, 165, 0.7);
   backdrop-filter: blur(5px);
   border-bottom: none;
 }
 
 .navbar-brand {
-  color: white;
+  color: rgb(166, 166, 166);
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -127,11 +127,18 @@ a:focus {
 }
 
 .tm-nav-link {
-  color: white;
+  color: rgb(60, 60, 60);
+  text-shadow: #9b9b9b 0px 0px 3px;
+}
+.tm-nav-link:hover,
+.tm-nav-link.current {
+  scale: 1.2;
+  color: #3496d8;
 }
 
 .tm-navbar.scroll .tm-nav-link {
-  color: #8f8f8f;
+  color: rgb(60, 60, 60);
+  text-shadow: #9b9b9b 0px 0px 3px;
 }
 
 .tm-navbar.scroll .tm-nav-link:hover,
@@ -577,8 +584,14 @@ p {
   }
 
   .navbar-collapse .nav-link {
-    color: #8f8f8f;
-  }
+  color: rgb(60, 60, 60);
+  text-shadow: #9b9b9b 0px 0px 3px;
+}
+.tm-nav-link:hover,
+.tm-nav-link.current {
+  scale: 1.2;
+  color: #3496d8;
+}
 
   /* mobile tweaks for contact section */
   #contact {
