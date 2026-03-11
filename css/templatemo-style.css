@@ -1,6 +1,12 @@
 
 html {
   font-size: 18px;
+  /* full-height for vh calculations */
+  height: 100%;
+}
+
+body {
+  height: 100%;
 }
 
 body {
@@ -159,7 +165,7 @@ a:focus {
   background-image: url(../img/Networking.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   height: 100vh;
   min-height: 300px;
   position: relative;
@@ -175,6 +181,7 @@ a:focus {
   height: 100%;
   background: rgba(0,0,0,0.35);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 1;
 }
 
@@ -298,16 +305,43 @@ a:focus {
 
 #contact {
   color: white;
+  text-shadow: #5b5b5b 0px 2px 6px;
   background-image: url(../img/Contact.jpg);
-  background-position: center 80%;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 650px;
+  background-position: center center;
+  height: 100vh;
+  min-height: 300px;
   position: relative;
-  padding-bottom: 30px;
-  padding-top: 120px;
+  overflow: hidden;
 }
 
+#contact .tm-container-contact {
+  flex: 1 1 auto;
+  overflow-y: visible;
+  padding: 70px 15px 30px; 
+  width: 100%;
+  max-width: 1063px;
+  margin: 0 auto;
+}
+
+#contact .tm-footer {
+  flex: 0 0 auto;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 0.75rem;
+  width: 100%;
+  background: transparent;
+}
+
+@media (min-height: 800px) {
+  #contact .tm-container-contact {
+    padding-top: 120px;
+    padding-bottom: 30px;
+  }
+}
+
+/* keep backdrop overlay */
 #contact::before {
   content: '';
   position: absolute;
@@ -317,8 +351,16 @@ a:focus {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 1;
 }
+
+#contact .tm-container-contact,
+#contact .tm-footer {
+  position: relative;
+  z-index: 2;
+}
+
 
 #contact .tm-container-contact,
 #contact .tm-footer {
@@ -510,7 +552,47 @@ p {
   .navbar-collapse .nav-link {
     color: #8f8f8f;
   }
+
+  /* mobile tweaks for contact section */
+  #contact {
+    min-height: 100vh;
+    height: auto;
+    background-position: center top;
+  }
+  #contact .tm-container-contact {
+    padding: 50px 10px 20px;
+  }
+  #contact .tm-container-contact p,
+  #contact .tm-container-contact h2 {
+    font-size: 2.5rem; 
+    line-height: 1.4;
+  }
+  #contact .tm-container-contact p {
+    font-size: 1rem;
+  }
+  .tm-contact-item {
+    margin-bottom: 45px;
+  }
+  /* stack icons vertically to save horizontal space */ 
+  .tm-contact-item-link span {
+    margin-top: 8px;
+  }
 }
 
 @media (max-width: 420px) {
+  /* small phones: disable parallax and center backgrounds to avoid cropping issues */
+  #hero,
+  #contact {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+}
+
+/* also apply for slightly larger mobiles */
+@media (max-width: 767px) {
+  #hero,
+  #contact {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
 }

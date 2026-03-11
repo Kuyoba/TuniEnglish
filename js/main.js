@@ -42,8 +42,10 @@ var background_image_parallax_2 = function($object, multiplier){
 
 $(function(){
   // Hero Section - Background Parallax
-  background_image_parallax($(".tm-parallax"), 0.30, false);
-  background_image_parallax_2($("#contact"), 0.80);   
+  if (window.innerWidth > 767) {
+    background_image_parallax($(".tm-parallax"), 0.40, false);
+    background_image_parallax_2($("#contact"), 0.80);
+  }   
   
   // Handle window resize
   window.addEventListener('resize', function(){
