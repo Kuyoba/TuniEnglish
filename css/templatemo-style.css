@@ -310,10 +310,12 @@ a:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 100vh;
-  min-height: 300px;
+  /* allow the section to grow beyond the viewport height when content exceeds it */
+  height: auto !important;
+  min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  /* don't clip children; page should scroll normally */
+  overflow: visible !important;
 }
 
 #contact .tm-container-contact {
@@ -338,6 +340,17 @@ a:focus {
   #contact .tm-container-contact {
     padding-top: 120px;
     padding-bottom: 30px;
+  }
+}
+
+/* small-screen tweaks so footer and content scroll properly */
+@media (max-width: 768px) {
+  #contact {
+    height: auto;
+  }
+  #contact .tm-footer {
+    position: relative;
+    bottom: auto;
   }
 }
 
@@ -495,6 +508,20 @@ p {
 }
 .form-control.missing {
   border-color: #ffc107 !important;
+}
+
+
+/* ensure contact section behaves on narrow screens */
+@media (max-width: 768px) {
+  #contact {
+    /* let the section expand with its content on phones/tablets */
+    height: auto;
+  }
+  /* keep footer positioned normally so it scrolls with content */
+  #contact .tm-footer {
+    position: relative;
+    bottom: auto;
+  }
 }
 
 @media (min-width: 768px) {
