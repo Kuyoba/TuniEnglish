@@ -129,6 +129,9 @@ $(function(){
       }
     });
   });
+  $('#registerModal')
+    .on('show.bs.modal', function() { $(this).removeAttr('inert'); })
+    .on('hidden.bs.modal', function() { $(this).attr('inert',''); });
 });
 function resetForm() {
   var form = document.getElementById('clubForm');
