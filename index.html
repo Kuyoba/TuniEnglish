@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/templatemo-style.css" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
   </head>
   <body>    
@@ -209,12 +210,13 @@
                       <textarea name="ClubExpectations?" rows="3" placeholder="What are you expecting to gain from our club?" class="form-control" required></textarea>
                     </div>
                 </fieldset>
-
                 <input type="hidden" name="_subject" value="New Club Submission">
-                <input type="hidden" name="_captcha" value="true">
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAACpDv5LUq8Ueh210" data-theme="light" data-size="normal"></div>
+                <!--<input type="hidden" name="_captcha" value="true">-->
                 <input type="hidden" name="_next" value="https://Kuyoba.github.io/TuniEnglish/thanks.html">
                 <button type="submit" class="btn btn-primary">Send</button> 
                 <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              
             </form>
           </div>
         </div>
