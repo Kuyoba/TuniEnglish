@@ -211,8 +211,8 @@
                     </div>
                 </fieldset>
                 <input type="hidden" name="_subject" value="New Club Submission">
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAACpDv5LUq8Ueh210" data-theme="light" data-size="normal"></div>
-                <!--<input type="hidden" name="_captcha" value="true">-->
+                <!-- placeholder for turnstile widget; rendered when user clicks Send -->
+                <div id="turnstile-container" style="display:none; margin-top:1rem;"></div>
                 <input type="hidden" name="_next" value="https://Kuyoba.github.io/TuniEnglish/thanks.html">
                 <button type="submit" class="btn btn-primary">Send</button> 
                 <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -226,5 +226,41 @@
     <script src="js/jquery-1.9.1.min.js"></script>     
     <script src="js/bootstrap.min.js"></script> 
     <script src="js/main.js"></script>
+    <!-- deferred turnstile logic -->
+    <script>
+      (function() {
+        const form = document.getElementById('clubForm');
+        let widgetId;
+        function onToken(token) {
+          // add response field and submit
+          let inp = document.createElement('input');
+          inp.type = 'hidden';
+          inp.name = 'cf-turnstile-response';
+          inp.value = token;
+          form.appendChild(inp);
+          form.submit();
+        }
+
+        form.addEventListener('submit', function(e) {
+          // if there's already a token, just let it go
+          if (form.querySelector('input[name="cf-turnstile-response"]')) {
+            return; // normal submit
+          }
+          e.preventDefault();
+          if (widgetId === undefined) {
+            widgetId = turnstile.render('#turnstile-container', {
+              sitekey: '0x4AAAAAACpDv5LUq8Ueh210',
+              theme: 'light',
+              size: 'normal',
+              callback: onToken
+            });
+          }
+          // make sure container is visible so challenge can appear
+          document.getElementById('turnstile-container').style.display = '';
+          // trigger the challenge
+          turnstile.execute(widgetId);
+        });
+      })();
+    </script>
   </body>
 </html>
