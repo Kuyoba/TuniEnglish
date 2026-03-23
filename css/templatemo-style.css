@@ -125,6 +125,21 @@ a:focus {
 .nav-item {
   list-style: none;
 }
+.nav-button-link {
+  color: #8f8f8f;
+  background: none;
+  border: none;
+  padding: 17px;
+  margin: 0;
+  border-radius: 45%;
+}
+.nav-button-link:hover {
+  color: #3496d8;
+  scale: 1.2;
+  box-shadow: inset 0px 0px 7px #4a4a4a;
+  transition: all 0.3s ease;  
+}
+
 
 .tm-nav-link {
   color: rgb(60, 60, 60);
